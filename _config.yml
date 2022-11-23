@@ -2,7 +2,7 @@ title: RapTCR remplate
 description: My starter template for a Jeykll site using the Just the Docs theme!
 theme: just-the-docs
 
-url: https://vincentvandeuren.github.io/RapTCR_docs
+url: https://vincentvandeuren.github.io/RapTCR
 
 aux_links:
-  Template Repository: https://github.com/vincentvandeuren/RapTCR
+  Template Repository: https://github.com/vincentvandeuren/RapTCR_docs
