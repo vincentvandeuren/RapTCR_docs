@@ -8,6 +8,6 @@ aux_links:
   GitHub Repository: https://github.com/vincentvandeuren/RapTCR
 
 callouts:
-  warning:
+  note:
     title: Note
     color: yellow
