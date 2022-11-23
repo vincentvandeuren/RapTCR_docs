@@ -3,7 +3,9 @@ title: Home
 layout: home
 ---
 
-# Installation
+# RapTCR: Rapid TCR repertoire visualization and annotation.
+
+## Installation
 
 RapTCR is available from [Anaconda]. To install it, including the necessary dependencies, use:
 
