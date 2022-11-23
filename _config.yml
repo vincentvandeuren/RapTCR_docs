@@ -1,4 +1,4 @@
-title: RapTCR documentation
+title: RapTCR
 description: My starter template for a Jeykll site using the Just the Docs theme!
 theme: just-the-docs
 
@@ -7,3 +7,7 @@ url: https://vincentvandeuren.github.io/RapTCR
 aux_links:
   GitHub Repository: https://github.com/vincentvandeuren/RapTCR
 
+callouts:
+  warning:
+    title: Note
+    color: yellow
