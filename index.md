@@ -1,6 +1,7 @@
 ---
+layout: default
 title: Home
-layout: home
+nav_order: 0
 ---
 
 # RapTCR: Rapid TCR repertoire visualization and annotation.
