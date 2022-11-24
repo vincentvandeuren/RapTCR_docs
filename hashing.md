@@ -10,8 +10,8 @@ Most indexing structures for efficient similarity search (e.g. [Faiss]) require
 a set of vectors with equal length as input. Yet, the length of CDR3 regions
 varies widely. Adressing this issue, we developed a hashing algorithm that
 transforms CDR3 sequences of different lengths into vectors of length 64. Our
-algorithm is locality sensitive: *similar CDR3 sequences will translate to
-similar vectors*, approximating pairwise alignment and BLOSUM62-based scoring.
+algorithm is locality sensitive: **similar CDR3 sequences will translate to
+similar vectors**, approximating pairwise alignment and BLOSUM62-based scoring.
 
 *Explanation of hashing method here*
 
@@ -45,8 +45,10 @@ cdr3_hasher.fit()
 Each `.fit()` will result in a different hasher; hence, maker sure to
 not only call this method once. 
 
-Ultimately, we can then use this class using the `.transform()` method. You can
-pass in a single CDR3 sequence, but also a list or a full `Repertoire` object.
+The resulting fitted hasher can then be used in various analyses. Most require
+you to directly provide the Cdr3Hasher object, although you can also generate
+the hashes yourself using the `.transform()` method. Here, you can pass a single
+CDR3 sequence, but also a list or a full `Repertoire` object.
 
 <div class="code-example" markdown=1>
 
