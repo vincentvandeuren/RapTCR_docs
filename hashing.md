@@ -29,7 +29,7 @@ cdr3_hasher = Cdr3Hasher(pos_p=0.5, clip=0)
 There are two noteworthy hyperparameters:
 
 - `pos_p` defines the importance of the relative position of each AA in the CDR3
-  for the final hash. By increasing this parameter, slightly modifying the
+  for the final hash. If this parameter is increased, slightly modifying the
   location of a certain AA in the CDR3 will have a larger effect on the final
   hash. From our experiments, 0.5 came out as an optimal value.
 - `clip` can be used to trim the CDR3s, hence ignoring the first and last *n* AAs.
@@ -43,7 +43,7 @@ cdr3_hasher.fit()
 {: .note}
 
 Each `.fit()` will result in a different hasher; hence, maker sure to
-not only call this method once. 
+only call this method once. 
 
 The resulting fitted hasher can then be used in various analyses. Most require
 you to directly provide the Cdr3Hasher object, although you can also generate
