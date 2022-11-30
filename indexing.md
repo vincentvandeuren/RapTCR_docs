@@ -66,3 +66,17 @@ Practically, the wide range of possible indexes can be imported from
     This list in the format `[(seq, distance), ...]` contains the *k* CDR3
     sequences closest to the query in terms of the L2 (euclidean) distance
     between their respective vector representations. 
+
+## Available indexes
+
+| Class name | Explanation | Hyperparams |
+|:-----------|:------------|:------------|
+| `FlatIndex` | Flat index for Euclidean distance, implemented using [Faiss]. | None |
+| `IvfIndex` | Inverted file index implemented using [Faiss]. This uses a rough k-means clustering to group the vectors in centroids. At query time, only a subset of these centroids are probed. | `n_centroids`, `n_probes` |
+| `HnswIndex` | Index using hierarchical navigable small networks, implemented using [Faiss]. | `n_links` |
+| `PynndescentIndex` | Uses [PyNNDescent] for approximate nearest neighbours descent. | `k`, `diversify_prob`, `pruning_degree_multiplier` |
+
+--------
+
+[Faiss]: https://github.com/facebookresearch/faiss
+[PyNNDescent]: https://pynndescent.readthedocs.io/en/latest/
