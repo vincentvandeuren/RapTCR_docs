@@ -67,6 +67,9 @@ Practically, the wide range of possible indexes can be imported from
     sequences closest to the query in terms of the L2 (euclidean) distance
     between their respective vector representations. 
 
+    Alternatively, the generated distance and index matrices can be accessed
+    as attributes via `knn_result.D` and `knn_result.I`.
+
 ## Available indexes
 
 | Class name | Explanation | Hyperparams |
@@ -76,7 +79,18 @@ Practically, the wide range of possible indexes can be imported from
 | `HnswIndex` | Index using hierarchical navigable small networks, implemented using [Faiss]. | `n_links` |
 | `PynndescentIndex` | Uses [PyNNDescent] for approximate nearest neighbours descent. | `k`, `diversify_prob`, `pruning_degree_multiplier` |
 
+
+{: .note}
+More information on the different indexes available in Faiss can be found [here].
+
+## Example : Querying the [VDJdb]
+
+Example?
+
 --------
 
 [Faiss]: https://github.com/facebookresearch/faiss
 [PyNNDescent]: https://pynndescent.readthedocs.io/en/latest/
+[here]: https://github.com/facebookresearch/faiss/wiki/Faiss-indexes
+[VDJdb]: https://github.com/antigenomics/vdjdb-db
+

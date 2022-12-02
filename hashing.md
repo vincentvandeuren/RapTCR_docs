@@ -66,8 +66,8 @@ array([ 3,  3,  3, -1, -1, -3, -1,  1,  7, -5,  3,  3,  1, -1, -3,  1, -3,
 
 or
 
-<div class="code-example" markdown=1>
 
+<div class="code-example" markdown=1>
 ```python
 repertoire = read_AIRR('filepath')
 cdr3_hasher.transform(repertoire)
