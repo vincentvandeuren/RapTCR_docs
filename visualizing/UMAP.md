@@ -177,7 +177,7 @@ plt.tight_layout()
 plt.savefig("examples/example_UMAP.png", dpi=300)
 ```
 
-![example umap plot](/assets/images/example_UMAP.png)
+![example umap plot](RapTCR_docs/assets/images/example_UMAP.png)
 
 </div>
 
