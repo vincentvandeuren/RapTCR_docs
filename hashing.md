@@ -9,9 +9,10 @@ nav_order: 3
 Most indexing structures for efficient similarity search (e.g. [Faiss]) require
 a set of vectors with equal length as input. Yet, the length of CDR3 regions
 varies widely. Adressing this issue, we developed a hashing algorithm that
-transforms CDR3 sequences of different lengths into vectors of length 64. Our
-algorithm is locality sensitive: **similar CDR3 sequences will translate to
-similar vectors**, approximating pairwise alignment and BLOSUM62-based scoring.
+transforms CDR3 sequences of different lengths into vectors of the same length,
+*m*. Our algorithm is locality sensitive: **similar CDR3 sequences will
+translate to similar vectors**, approximating pairwise alignment and
+BLOSUM62-based scoring.
 
 *Explanation of hashing method here*
 
@@ -23,16 +24,19 @@ initiating the class.
 
 ```python
 from raptcr.hashing import Cdr3Hasher
-cdr3_hasher = Cdr3Hasher(pos_p=0.5, clip=0)
+cdr3_hasher = Cdr3Hasher(m=64)
 ```
 
 There are two noteworthy hyperparameters:
 
-- `pos_p` defines the importance of the relative position of each AA in the CDR3
+- `m` is the number of dimensions (length) of the final hash.
+- `distance_matrix` is the 20x20 matrix that defines the distances between amino
+  acids. As default, a distance matrix derived from the BLOSUM62 matrix is used.
+- `p` defines the importance of the relative position of each AA in the CDR3
   for the final hash. If this parameter is increased, slightly modifying the
   location of a certain AA in the CDR3 will have a larger effect on the final
-  hash. From our experiments, 0.5 came out as an optimal value.
-- `clip` can be used to trim the CDR3s, hence ignoring the first and last *n* AAs.
+  hash. From our experiments, 9 came out as an optimal value.
+- `trim_left` and `trim_right` can be used to clip the CDR3s, hence ignoring the first and last *n* AAs.
 
 Next, we can fit our hasher. This method requires no parameters.
 
@@ -42,13 +46,13 @@ cdr3_hasher.fit()
 
 {: .note}
 
-Each `.fit()` will result in a different hasher; hence, maker sure to
+Each `.fit()` could possibly result in a different hasher; hence, maker sure to
 only call this method once. 
 
 The resulting fitted hasher can then be used in various analyses. Most require
 you to directly provide the Cdr3Hasher object, although you can also generate
 the hashes yourself using the `.transform()` method. Here, you can pass a single
-CDR3 sequence, but also a list or a full `Repertoire` object.
+CDR3 sequence, but also a list of sequences, or a full `Repertoire` object.
 
 <div class="code-example" markdown=1>
 
