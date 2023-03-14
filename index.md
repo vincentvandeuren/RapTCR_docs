@@ -13,8 +13,6 @@ RapTCR is available from [Anaconda]. To install it, including the necessary depe
 ```bash
 conda install raptcr -c conda-forge -c vincentvandeuren
 ```
-{: .note }
-RapTCR requires python 3.9. Hence, it may be necessary to create a new conda environment, as installing it in an older environment may fail. 
 
 ---
 [Anaconda]: https://anaconda.org/vincentvandeuren/
